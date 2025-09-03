@@ -44,3 +44,20 @@
 .product-price{
     color: red;
 }
+/* end product */
+
+/* category */
+.category-list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.category-list .category-item{
+    text-align: center;
+    width: 15%;
+    background-color: #FFA500;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+/* end category */

@@ -1,11 +1,10 @@
 const productList = document.querySelector(".product-list");
 
-fetch("http://localhost:3000/products")
-  .then((response) => response.json())
-  .then((data) => {
-    let productContent = data.map((item) => {
-      return `    
-        <div class="product-item">
+import { fetchData } from "./fetchData.js";
+
+const data = await fetchData("products");
+let productData = data.map((item) => {
+  return `<div class="product-item">
         <div class="product-image">
           <img
             src=${item.images}
@@ -23,7 +22,5 @@ fetch("http://localhost:3000/products")
           </div>
         </div>
       </div>`;
-    });
-
-    productList.innerHTML=productContent
-  });
+}).join("");
+productList.innerHTML = productData;
